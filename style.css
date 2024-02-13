@@ -383,3 +383,15 @@ dialog {
 	gap: 50px;
 	font-size: 1.3rem;
 }
+
+@media (max-width: 768px) {
+	.form-content {
+		width: 80%;
+	}
+	.link-area {
+		width: 80%;
+	}
+	.top-nav {
+		font-size: 1.5rem;
+	}
+}
