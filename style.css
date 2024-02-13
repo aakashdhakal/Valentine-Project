@@ -10,6 +10,11 @@ body {
 	width: 100%;
 	height: 100%;
 	cursor: url("assets/cursor.svg"), auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 60px;
 }
 
 .top-nav {
@@ -44,8 +49,11 @@ body {
 	gap: 20px;
 	margin-top: 20px;
 	font-family: Nunito, sans-serif;
-	width: 100%;
+	width: 23%;
 	height: 100%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	padding: 20px;
 }
 
 form {
@@ -56,7 +64,7 @@ form {
 	gap: 20px;
 	margin-top: 20px;
 	font-family: Nunito, sans-serif;
-	width: 20%;
+	width: 100%;
 }
 
 .valentine-form:nth-child(2) {
@@ -255,6 +263,23 @@ form button {
 	}
 }
 .link-area {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.link-area a {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 15px;
+	width: 100%;
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-align: center;
+}
+.link-content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -264,4 +289,97 @@ form button {
 	font-family: Nunito, sans-serif;
 	width: 100%;
 	height: 100%;
+}
+.link-area button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 15px;
+	background: #f1356d;
+	color: #fff;
+	width: 100%;
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+dialog {
+	margin: auto;
+	width: 50%;
+	height: 50%;
+	border: 2px solid #f1356d;
+	border-radius: 20px;
+}
+.invitation-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 50px;
+	margin-top: 20px;
+	width: 100%;
+	height: 90%;
+	font-size: 1.3rem;
+	padding: 50px;
+}
+.invitation-content .creator {
+	text-align: right;
+	margin-left: 45rem;
+}
+.invitation-content p {
+	font-family: Nunito, sans-serif;
+}
+
+.invitation-content h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+.invitation-content h1 img {
+	width: 50px;
+}
+
+.yes-no {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	width: 100%;
+}
+.invitation-content button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 15px;
+	background: #f1356d;
+	color: #fff;
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	cursor: pointer;
+	outline: none;
+}
+
+#no {
+	background-color: transparent;
+	color: #f1356d;
+	border: 2px solid #f1356d;
+}
+.creator-contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.creator-contact ul li {
+	list-style: none;
+}
+.creator-contact ul li a {
+	text-decoration: none;
+	color: #f1356d;
+}
+.creator-contact ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	font-size: 1.3rem;
 }

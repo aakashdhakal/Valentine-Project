@@ -18,6 +18,7 @@
 		<link
 			rel="stylesheet"
 			href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css" />
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 	</head>
 	<body>
 		<div class="preloader">
@@ -35,7 +36,7 @@
 			<img src="./assets/heart.svg" alt="" />
 		</nav>
 		<div class="form-content">
-			<form action="" class="valentine-form">
+			<form action="" class="valentine-form" netlify>
 				<div class="input-field">
 					<input
 						type="text"
@@ -44,6 +45,15 @@
 						id="name"
 						autocomplete="off" />
 					<label class="placeholder">Your Name</label>
+				</div>
+				<div class="input-field">
+					<input
+						type="email"
+						name="username"
+						placeholder=""
+						id="email"
+						autocomplete="off" />
+					<label class="placeholder">Your Email</label>
 				</div>
 				<div class="input-field">
 					<input
@@ -64,13 +74,61 @@
 		<div class="link-area">
 			<div class="link-content">
 				<h2>Your Valentine Link</h2>
-				<div class="link">
-					<a href="" target="_blank"
-						>Please share this link to your valentine</a
-					>
+				<a href="" target="_blank">Please share this link to your valentine</a>
+			</div>
+			<button id="copyToClipboard">
+				<i class="fa-solid fa-clipboard"></i>
+				<span>Copy</span>
+			</button>
+		</div>
+		<div class="creator-contact">
+			<h3>
+				Created with <i class="fa-solid fa-heart" style="color: #f1356d"></i> by
+				AAKASH DHAKAL
+			</h3>
+			<ul class="links">
+				<li>
+					<a href="" target="_blank">
+						<i class="fa-brands fa-github"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" target="_blank">
+						<i class="fa-brands fa-linkedin"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" target="_blank">
+						<i class="fa-brands fa-x-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" target="_blank">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<dialog id="invitation">
+			<div class="invitation-content">
+				<h1>
+					<img src="./assets/heart.svg" alt="" />
+					Hello,<span class="crush">name</span>
+					<img src="./assets/heart.svg" alt="" />
+				</h1>
+				<p>
+					Hey <span class="crush">name</span>, do you have a map? Because I just
+					got lost in your profile picture. Now that I've found my way, would
+					you be my Valentine? 😊<br />
+					<span class="creator">- name</span>
+				</p>
+
+				<div class="yes-no">
+					<button id="yes">Yes 😊</button>
+					<button id="no">No 🥺</button>
 				</div>
 			</div>
-		</div>
+		</dialog>
 		<script src="script.js"></script>
 	</body>
 </html>
