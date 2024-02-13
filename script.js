@@ -98,13 +98,13 @@ let noButton = document.querySelector("#no");
 yesButton.addEventListener("click", () => {
 	sendEmail("yes");
 	dialog.close();
-	launch_toast("Response sent to sender's email");
+	launch_toast("Response sent successfully");
 });
 
 noButton.addEventListener("click", () => {
 	sendEmail("no");
 	dialog.close();
-	launch_toast("Response sent to sender's email");
+	launch_toast("Response sent successfully ");
 });
 
 //send email
