@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Be My Valentine</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="shortcut icon" href="./assets/heart.svg" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+			rel="stylesheet" />
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	</head>
+	<body>
+		<div class="preloader">
+			<lottie-player
+				src="./assets/heart.json"
+				background="transparent"
+				speed="1"
+				style="width: 300px; height: 300px"
+				loop
+				autoplay></lottie-player>
+		</div>
+		<nav class="top-nav">
+			<img src="./assets/heart.svg" alt="" />
+			<h1>Be My Valentine</h1>
+			<img src="./assets/heart.svg" alt="" />
+		</nav>
+		<div class="form-content">
+			<form action="" class="valentine-form">
+				<div class="input-field">
+					<input
+						type="text"
+						name="username"
+						placeholder=""
+						id="name"
+						autocomplete="off" />
+					<label class="placeholder">Your Name</label>
+				</div>
+				<div class="input-field">
+					<input
+						type="text"
+						name="username"
+						placeholder=""
+						id="valentineName"
+						autocomplete="off" />
+					<label class="placeholder">Your Valentine Name</label>
+				</div>
+				<button type="submit">Create Link</button>
+			</form>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
