@@ -97,10 +97,14 @@ let noButton = document.querySelector("#no");
 
 yesButton.addEventListener("click", () => {
 	sendEmail("yes");
+	dialog.close();
+	launch_toast("Response sent to sender's email");
 });
 
 noButton.addEventListener("click", () => {
 	sendEmail("no");
+	dialog.close();
+	launch_toast("Response sent to sender's email");
 });
 
 //send email
@@ -125,4 +129,8 @@ function sendEmail(status) {
 	}).then(function (message) {
 		console.log("mail sent successfully" + message);
 	});
+}
+
+function closeDialog() {
+	dialog.close();
 }
