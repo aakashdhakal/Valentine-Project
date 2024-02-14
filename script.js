@@ -38,28 +38,30 @@ form.addEventListener("submit", (e) => {
 		return;
 	} else {
 		let params = new URLSearchParams({ name, crush, email });
-		let url = window.location.href + "?" + params.toString();
+		let url =
+			"https://bemyvalentine.aakashdhakal.com.np/" + "?" + params.toString();
 
 		shortenURL(url);
 	}
 });
 
-function shortenURL(url) {
-	fetch("https://shrtlnk.dev/api/v2/link", {
+function shortenURL(longUrl) {
+	fetch("https://api.manyapis.com/v1-create-short-url", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			"api-key": "RzkZIRmDzGzOsbhXQkajIOW7m9DwLN8ehURLBj5p9BKoB",
-			"Accept-type": "application/json",
+			Accept: "application/json",
+			"x-api-key": "sk_74dfe4abbca246d8b65d18c4a97387bd",
 		},
 		body: JSON.stringify({
-			url: url,
+			url: longUrl,
+			expiry: "never",
 		}),
 	}).then((response) => {
 		response.json().then((data) => {
 			let linkArea = document.querySelector(".link-area a");
-			linkArea.textContent = data.shortenedUrl;
-			linkArea.href = data.shortenedUrl;
+			linkArea.textContent = data.shortUrl;
+			linkArea.href = data.shortUrl;
 		});
 	});
 }

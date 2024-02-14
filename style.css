@@ -131,16 +131,14 @@ form button {
 	font-family: Nunito, sans-serif;
 	position: fixed;
 	z-index: 1;
-	left: 0;
 	right: 2rem;
-	bottom: 30px;
+	top: 30px;
 	font-size: 1.1rem;
 	width: 350px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 10px;
-	margin: auto;
 	letter-spacing: 2px;
 	overflow: hidden;
 	padding: 1rem 0.8rem;
@@ -271,6 +269,7 @@ form button {
 	align-items: center;
 	gap: 10px;
 	font-family: Nunito, sans-serif;
+	width: 23%;
 }
 .link-area a {
 	padding: 10px 20px;
