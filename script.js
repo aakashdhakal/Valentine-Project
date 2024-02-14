@@ -131,9 +131,11 @@ noButton.addEventListener("click", () => {
 function sendEmail(status) {
 	let params = new URLSearchParams(window.location.search);
 	let email = params.get("email");
+	let crush = params.get("crush");
+
 	let body;
 	if (status === "yes") {
-		body = "Congratulations!! Your crush has accepted your proposal";
+		body = "Congratulations!!" + crush + "has accepted your proposal";
 	} else {
 		body = "Sorry!! Your crush has rejected your proposal";
 	}
