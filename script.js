@@ -23,23 +23,27 @@ window.addEventListener("load", () => {
 });
 
 let form = document.querySelector(".valentine-form");
+let submitBtn = document.querySelector(".valentine-form button");
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
+	submitBtn.innerHTML =
+		"<i class='fas fa-spinner fa-spin'></i> Creating Link...";
 	let name = document.querySelector("#name").value;
 	let crush = document.querySelector("#valentineName").value;
 	let email = document.querySelector("#email").value;
 
 	if (name === "" || email === "") {
 		launch_toast("Please fill in all fields");
+		submitBtn.innerHTML = "Create Link";
 		return;
 	} else if (crush === "") {
 		launch_toast("Sem bro Sem - Developer");
+		submitBtn.innerHTML = "Create Link";
 		return;
 	} else {
 		let params = new URLSearchParams({ name, crush, email });
-		let url =
-			"https://bemyvalentine.aakashdhakal.com.np/" + "?" + params.toString();
+		let url = window.location.href + "?" + params.toString();
 
 		shortenURL(url);
 	}
@@ -62,6 +66,8 @@ function shortenURL(longUrl) {
 			let linkArea = document.querySelector(".link-area a");
 			linkArea.textContent = data.shortUrl;
 			linkArea.href = data.shortUrl;
+			launch_toast("Link created successfully");
+			submitBtn.innerHTML = "Create Link";
 		});
 	});
 }
@@ -116,12 +122,14 @@ let yesButton = document.querySelector("#yes");
 let noButton = document.querySelector("#no");
 
 yesButton.addEventListener("click", () => {
+	yesButton.innerHTML = "<i class='fas fa-spinner fa-spin'></i> ";
 	sendEmail("yes");
 	dialog.close();
 	launch_toast("Response sent successfully");
 });
 
 noButton.addEventListener("click", () => {
+	noButton.innerHTML = "<i class='fas fa-spinner fa-spin'></i> ";
 	sendEmail("no");
 	dialog.close();
 	launch_toast("Response sent successfully ");
@@ -135,9 +143,9 @@ function sendEmail(status) {
 
 	let body;
 	if (status === "yes") {
-		body = "Congratulations!!" + crush + "has accepted your proposal";
+		body = "Congratulations!! " + crush + " has accepted your proposal";
 	} else {
-		body = "Sorry!! Your crush has rejected your proposal";
+		body = "Sorry!! " + crush + " has rejected your proposal";
 	}
 	Email.send({
 		SecureToken: "6d1db3bb-4ea5-4cfc-a306-9c0d621bdc21",

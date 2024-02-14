@@ -305,21 +305,43 @@ form button {
 }
 dialog {
 	margin: auto;
-	width: 60%;
-	height: 60%;
+	width: 70%;
+	height: 70%;
 	border: 2px solid #f1356d;
-	border-radius: 20px;
+	border-radius: 5rem;
+	animation: dialog-appear 0.5s ease-in-out;
+}
+.illustration {
+	width: 70%;
+}
+.invitation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 20px;
+	width: 100%;
+	height: 100%;
+}
+@keyframes dialog-appear {
+	0% {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 .invitation-content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	gap: 50px;
-	margin-top: 20px;
+	gap: 5rem;
 	width: 100%;
-	height: 90%;
-	font-size: 1.3rem;
+	height: 100%;
+	font-size: 1.2rem;
 	padding: 50px;
 }
 .invitation-content .creator {
@@ -327,6 +349,7 @@ dialog {
 }
 .invitation-content p {
 	font-family: Nunito, sans-serif;
+	line-height: 2.5rem;
 }
 
 .invitation-content h1 {
@@ -399,5 +422,8 @@ dialog {
 	#dialog {
 		width: 90%;
 		height: 90%;
+	}
+	.illustration {
+		display: none;
 	}
 }
