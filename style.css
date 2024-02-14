@@ -132,7 +132,7 @@ form button {
 	position: fixed;
 	z-index: 1;
 	left: 0;
-	right: 0;
+	right: 2rem;
 	bottom: 30px;
 	font-size: 1.1rem;
 	width: 350px;
@@ -268,6 +268,9 @@ form button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	font-family: Nunito, sans-serif;
 }
 .link-area a {
 	padding: 10px 20px;
@@ -286,7 +289,7 @@ form button {
 	flex-direction: column;
 	gap: 20px;
 	margin-top: 20px;
-	font-family: Nunito, sans-serif;
+
 	width: 100%;
 	height: 100%;
 }
@@ -367,6 +370,7 @@ dialog {
 	align-items: center;
 	flex-direction: column;
 	gap: 20px;
+	letter-spacing: 3px;
 }
 .creator-contact ul li {
 	list-style: none;

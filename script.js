@@ -39,12 +39,30 @@ form.addEventListener("submit", (e) => {
 	} else {
 		let params = new URLSearchParams({ name, crush, email });
 		let url = window.location.href + "?" + params.toString();
-		let linkArea = document.querySelector(".link-area a");
 
-		linkArea.href = url;
-		linkArea.textContent = url;
+		shortenURL(url);
 	}
 });
+
+function shortenURL(url) {
+	fetch("https://shrtlnk.dev/api/v2/link", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"api-key": "RzkZIRmDzGzOsbhXQkajIOW7m9DwLN8ehURLBj5p9BKoB",
+			"Accept-type": "application/json",
+		},
+		body: JSON.stringify({
+			url: url,
+		}),
+	}).then((response) => {
+		response.json().then((data) => {
+			let linkArea = document.querySelector(".link-area a");
+			linkArea.textContent = data.shortenedUrl;
+			linkArea.href = data.shortenedUrl;
+		});
+	});
+}
 
 function launch_toast(message) {
 	var x = document.getElementById("toast");
