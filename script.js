@@ -119,9 +119,6 @@ function sendEmail(status) {
 	}
 	Email.send({
 		SecureToken: "6d1db3bb-4ea5-4cfc-a306-9c0d621bdc21",
-		// Host: "smtp.elasticemail.com",
-		// Username: "anoother@gmail.com",
-		// Password: "EC86DDD5696188D7CE2E5E14ADD8BAED82AC",
 		To: email,
 		From: "noreply@aakashdhakal.com.np",
 		Subject: "Your crush has sent you response",
