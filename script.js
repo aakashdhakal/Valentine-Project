@@ -50,15 +50,16 @@ form.addEventListener("submit", (e) => {
 });
 
 function shortenURL(longUrl) {
-	fetch("https://ulvis.net/API/write/post", {
+	fetch("https://cleanuri.com/api/v1/shorten", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 			Accept: "application/json",
+			//cors
+			"Access-Control-Allow-Origin": "*",
 		},
 		body: JSON.stringify({
 			url: longUrl,
-			type: "json",
 		}),
 	}).then((response) => {
 		response.json().then((data) => {
