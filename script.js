@@ -64,8 +64,8 @@ function shortenURL(longUrl) {
 	}).then((response) => {
 		response.json().then((data) => {
 			let linkArea = document.querySelector(".link-area a");
-			linkArea.textContent = data.data.url;
-			linkArea.href = data.data.url;
+			linkArea.textContent = data.result_url;
+			linkArea.href = data.result_url;
 			launch_toast("Link created successfully");
 			submitBtn.innerHTML = "Create Link";
 		});
