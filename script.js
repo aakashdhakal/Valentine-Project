@@ -50,22 +50,21 @@ form.addEventListener("submit", (e) => {
 });
 
 function shortenURL(longUrl) {
-	fetch("https://api.manyapis.com/v1-create-short-url", {
+	fetch("https://ulvis.net/API/write/post", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 			Accept: "application/json",
-			"x-api-key": "sk_74dfe4abbca246d8b65d18c4a97387bd",
 		},
 		body: JSON.stringify({
 			url: longUrl,
-			expiry: "never",
+			type: "json",
 		}),
 	}).then((response) => {
 		response.json().then((data) => {
 			let linkArea = document.querySelector(".link-area a");
-			linkArea.textContent = data.shortUrl;
-			linkArea.href = data.shortUrl;
+			linkArea.textContent = data.data.url;
+			linkArea.href = data.data.url;
 			launch_toast("Link created successfully");
 			submitBtn.innerHTML = "Create Link";
 		});
@@ -148,7 +147,7 @@ function sendEmail(status) {
 		body = "Sorry!! " + crush + " has rejected your proposal";
 	}
 	Email.send({
-		SecureToken: "6d1db3bb-4ea5-4cfc-a306-9c0d621bdc21",
+		SecureToken: "0a991a3b-4cee-46ad-a1b9-bfb39f8cde71",
 		To: email,
 		From: "noreply@aakashdhakal.com.np",
 		Subject: "Your crush has sent you response",
@@ -161,3 +160,5 @@ function sendEmail(status) {
 function closeDialog() {
 	dialog.close();
 }
+
+//91fbbdba-706a647d
