@@ -50,22 +50,22 @@ form.addEventListener("submit", (e) => {
 });
 
 function shortenURL(longUrl) {
-	fetch("https://cleanuri.com/api/v1/shorten", {
+	fetch(" https://api.short.io/links/public", {
 		method: "POST",
 		headers: {
+			accept: "application/json",
 			"Content-Type": "application/json",
-			Accept: "application/json",
-			//cors
-			"Access-Control-Allow-Origin": "*",
+			authorization: "pk_kBPueHv2S9sjtGpU",
 		},
 		body: JSON.stringify({
-			url: longUrl,
+			originalURL: longUrl,
+			domain: "g1ri.short.gy",
 		}),
 	}).then((response) => {
 		response.json().then((data) => {
 			let linkArea = document.querySelector(".link-area a");
-			linkArea.textContent = data.result_url;
-			linkArea.href = data.result_url;
+			linkArea.textContent = data.shortURL;
+			linkArea.href = data.shortURL;
 			launch_toast("Link created successfully");
 			submitBtn.innerHTML = "Create Link";
 		});
@@ -162,4 +162,4 @@ function closeDialog() {
 	dialog.close();
 }
 
-//91fbbdba-706a647d
+//pk_kBPueHv2S9sjtGpU
